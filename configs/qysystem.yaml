@@ -1,0 +1,31 @@
+server:
+  mode: debug
+  healthz: true
+  max-ping-count: 3
+
+insecure:
+  bind-address: {QYCMS_SYSTEM_INSECURE_BIND_ADDRESS}
+  bind-port: {QYCMS_SYSTEM_INSECURE_BIND_PORT}
+
+mysql:
+  host: ${MARIADB_HOST}
+  username: ${MARIADB_USERNAME}
+  password: ${MARIADB_PASSWORD}
+  database: ${MARIADB_DATABASE}
+  max-idle-connecctions: 100
+  max-open-connections: 100
+  max-connection-life-time: 10s
+  log-level: 4
+
+redis:
+  host: ${REDIS_HOST} # redis 地址，默认 127.0.0.1:6379
+  port: ${REDIS_PORT} # redis 端口，默认 6379
+  password: ${REDIS_PASSWORD} # redis 密码
+
+jwt:
+  realm: JWT # jwt 标识
+  key: xImnc4G5WnNyVYFpG0kAyn4arYFoGM1Es # 服务端密钥
+  timeout: 24h # token 过期时间(小时)
+  max-refresh: 24h # token 更新时间(小时)
+qy:
+  token: SAkSgsuN
